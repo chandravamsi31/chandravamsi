@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular Demo Project';
+  showUSerList: boolean = false;
+
+  displayUSerList() {
+    this.showUSerList = true;
+  }
 }

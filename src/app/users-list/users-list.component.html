@@ -1,1 +1,20 @@
-<p>users-list works!</p>
+<h3>users-list works!</h3>
+
+<form (submit)="addUser()">
+    <label for="userName">
+        Enter new user name :
+    </label>
+    <input type="text" name="userName" id="userName" [(ngModel)]="newUser">
+    <button type="submit">Add</button>
+</form>
+
+<ul>
+    <li *ngFor="let user of listOfUSers">
+        {{user}} is Present
+    </li>
+</ul>
+<!-- 
+<p *ngFor="let sum of listOfUSers">
+    {{sum}}
+    <span> is good person</span>
+</p> -->

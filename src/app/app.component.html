@@ -1,3 +1,7 @@
 <h1>Welcome {{title}}</h1>
 
-<users-list></users-list>
+<button (click)="displayUSerList()">Show Me User List component</button>
+
+<div *ngIf="showUSerList">
+    <users-list></users-list>    
+</div>
