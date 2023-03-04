@@ -1,16 +1,23 @@
-<h3>users-list works!</h3>
+<h3>Student-list works!</h3>
 
 <form (submit)="addUser()">
+    <br/>
     <label for="userName">
         Enter new user name :
     </label>
     <input type="text" name="userName" id="userName" [(ngModel)]="newUser">
+    <br/>
     <button type="submit">Add</button>
 </form>
 
 <ul>
-    <li *ngFor="let user of listOfUSers">
-        {{user}} is Present
+    <li *ngFor="let stu of listOfStudent">
+        <span class="numberStyle">
+            {{stu.id}}
+        </span> 
+        <span class="nameStyle">
+            {{stu.name | uppercase}}
+        </span> 
     </li>
 </ul>
 <!-- 

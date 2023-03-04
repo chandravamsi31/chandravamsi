@@ -1,3 +1,25 @@
 p {
     /* background-color: red; */
 }
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+li span {
+    padding: 4px 10px;
+}
+
+.numberStyle {
+    background-color: grey;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.nameStyle {
+    background-color: rgb(224, 230, 59);
+    border-radius: 0px 10px 10px 0px;
+}
