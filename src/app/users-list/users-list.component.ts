@@ -3,6 +3,8 @@ export interface userStructure {
   id: number;
   name: string;
   age?: any;
+  phoneNo?: number;
+  mailID?: string;
 }
 @Component({  
   selector: 'users-list',
@@ -10,14 +12,14 @@ export interface userStructure {
   styleUrls: ['./users-list.component.css']
 })
 export class UsersListComponent {
-  newUser: any = "10";
+  newUser: any = "";
   userPwd: any = "";
+  selectedStudentForEdit: any;
   listOfStudent: userStructure[] = [
     {
       "name": "sasi",
       "id": 18,
       "age": 70
-
     },
     {
       "id": 19,
@@ -27,12 +29,14 @@ export class UsersListComponent {
     {
       "id": 20,
       "name": "Pavani",
-      "age": "23" 
+      "age": "23",
+      "phoneNo": 891891891
     },
     {
       "id": 21,
       "name": "Malleswari",
-      "age": 100
+      "age": 100,
+      "mailID": "malleswari@mail.com"
     },
     {
       "id": 22,
@@ -45,11 +49,27 @@ export class UsersListComponent {
     }
   ];
 
-  constructor() {
-    console.log(this.listOfStudent);
-  }
+  selectStudent: any;
 
   addUser() {
-    // this.listOfStudent.push(this.newUser);
+    let newStuID = ++{...this.listOfStudent[this.listOfStudent.length - 1]}.id;
+    let newStu = {
+      id: newStuID,
+      name: this.newUser
+    }
+    this.listOfStudent.push(newStu);
+  }
+
+  editStudent() {
+
+  }
+
+  selectStu(selectedStu: any) {
+    console.log(selectedStu);
+    this.selectedStudentForEdit = selectedStu;
+  }
+
+  detailStuInfo(student: any) {
+    this.selectStudent = student;
   }
 }

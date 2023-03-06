@@ -23,3 +23,21 @@ li span {
     background-color: rgb(224, 230, 59);
     border-radius: 0px 10px 10px 0px;
 }
+
+.infoBtn {
+    background: #87b0a7;
+    color: black;
+    border: 0;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 5px 5px 10px #835454;
+}
+
+.detailInfo {
+    border: 1px solid darkolivegreen;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 5px 20px 5px;
+    box-shadow: 10px 10px 10px darkolivegreen;
+}
