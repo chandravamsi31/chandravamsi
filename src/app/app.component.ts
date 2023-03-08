@@ -9,7 +9,12 @@ export class AppComponent {
   title = 'Angular Demo Project';
   showUSerList: boolean = false;
 
+  constructor() {
+    console.log("SWAG");
+  }
+
   displayUSerList() {
     this.showUSerList = true;
   }
 }
+

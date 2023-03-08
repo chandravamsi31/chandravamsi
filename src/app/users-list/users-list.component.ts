@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { GlobalService } from '../global.service';
+import { HttpClient } from '@angular/common/http';
+
 export interface userStructure {
   id: number;
   name: string;
@@ -56,7 +59,27 @@ export class UsersListComponent {
     }
   ];
 
+  userList: any;
+
   selectStudent: any;
+
+  constructor(public global: GlobalService, private http: HttpClient) {
+
+  }
+
+  ngOnInit() {
+    var first = 1478490;
+    var sec = 3465847;
+    var result = this.global.sumOf2No(first, sec);
+    console.log("student", result);
+
+    this.global.getUserData().subscribe((obj : any) => {
+      console.log(this.userList);
+      this.userList = obj.data;
+      console.log(obj);
+      console.log(this.userList);
+    });
+  }
 
   addUser() {
     let newStuID = ++{...this.listOfStudent[this.listOfStudent.length - 1]}.id;

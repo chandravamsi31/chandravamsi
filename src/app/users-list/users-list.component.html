@@ -1,3 +1,16 @@
+<ul>
+    <li *ngFor="let user of userList">
+        <h3>{{user.first_name}} {{user.last_name}}</h3>
+        <p>{{user.email}}</p>
+        <hr>
+    </li>
+</ul>
+
+
+
+
+
+
 <!-- <h3>Student-list works!</h3> -->
 
 <!-- <form (submit)="addUser()">
@@ -10,7 +23,7 @@
     <button type="submit">Add</button>
 </form> -->
 
-<form (submit)="editStudent()" *ngIf="selectedStudentForEdit != undefined">
+<!-- <form (submit)="editStudent()" *ngIf="selectedStudentForEdit != undefined">
     <br/>
     <label for="name">
         Edit Student Name :
@@ -22,12 +35,12 @@
 
 <div class="detailInfo" *ngIf="selectStudent != undefined">
     <app-student-info [stuInfo]="selectStudent" [studentCount] = "listOfStudent.length" (attendence)="setAttandence($event)"></app-student-info>
-</div>
+</div> -->
 
-<ul>
+<!-- <ul>
     <li *ngFor="let stu of listOfStudent">
-       <!-- <div (click)="selectStu(stu)"> -->
-        <!-- {{stu | json}} --> 
+       <div (click)="selectStu(stu)">
+        {{stu | json}} 
         <span class="numberStyle">
             {{stu.id}}
         </span> 
@@ -37,10 +50,10 @@
         <span [ngClass]="[stu.att == 0 ? 'red' :  ( stu.att == 1 ? 'green' : 'black')]">
             Hi
         </span>
-       <!-- </div> -->
+       </div>
        <button class="infoBtn" (click)="detailStuInfo(stu)">More Info</button>
     </li>
-</ul>
+</ul> -->
 
 
 <!-- 
