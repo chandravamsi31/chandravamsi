@@ -1,7 +1,12 @@
 <h1>Welcome {{title}}</h1>
 
-<button (click)="displayUSerList()">Show Me Student List component</button>
+<!-- <button (click)="displayUSerList()">Show Me Student List component</button>
 
 <div *ngIf="showUSerList">
     <users-list></users-list>    
-</div>
+</div> -->
+
+<button [routerLink]="['student']">Studen</button>
+<button [routerLink]="['staff']">Staff</button>
+
+<router-outlet></router-outlet>

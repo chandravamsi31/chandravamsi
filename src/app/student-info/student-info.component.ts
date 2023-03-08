@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-student-info',
@@ -9,8 +9,11 @@ export class StudentInfoComponent {
   @Input('stuInfo') stuInfo: any;
   @Input('studentCount') count: any;
 
-  
-  rank(no: number) {
-    
+  @Output() attendence = new EventEmitter();
+
+  attadence(no: number) {
+    console.log(no);
+    this.stuInfo.att = no;
+    this.attendence.emit(this.stuInfo);
   }
 }

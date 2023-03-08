@@ -41,3 +41,13 @@ li span {
     margin: 10px 5px 20px 5px;
     box-shadow: 10px 10px 10px darkolivegreen;
 }
+
+.black {
+    background-color: black;
+}
+.red {
+    background-color: red;
+}
+.green {
+    background-color: green;
+}

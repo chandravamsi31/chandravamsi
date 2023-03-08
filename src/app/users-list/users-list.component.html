@@ -21,12 +21,12 @@
 </form>
 
 <div class="detailInfo" *ngIf="selectStudent != undefined">
-    <app-student-info [stuInfo]="selectStudent" [studentCount] = "listOfStudent.length"></app-student-info>
+    <app-student-info [stuInfo]="selectStudent" [studentCount] = "listOfStudent.length" (attendence)="setAttandence($event)"></app-student-info>
 </div>
 
 <ul>
     <li *ngFor="let stu of listOfStudent">
-       <div (click)="selectStu(stu)">
+       <!-- <div (click)="selectStu(stu)"> -->
         <!-- {{stu | json}} --> 
         <span class="numberStyle">
             {{stu.id}}
@@ -34,7 +34,10 @@
         <span class="nameStyle">
             {{stu.name | uppercase}}
         </span> 
-       </div>
+        <span [ngClass]="[stu.att == 0 ? 'red' :  ( stu.att == 1 ? 'green' : 'black')]">
+            Hi
+        </span>
+       <!-- </div> -->
        <button class="infoBtn" (click)="detailStuInfo(stu)">More Info</button>
     </li>
 </ul>
